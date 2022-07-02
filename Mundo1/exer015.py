@@ -7,4 +7,4 @@ km  = float(input('Digite a quantidade de Km percorridos: '))
 dias = int(input('Digite a quantidade de dias alugados: '))
 
 preco_total = (60 * dias) + (km * 0.15)
-print('O valor total a pagar pelo aluguel do carro por {} e por {} Km rodados é de {} reais.'.format(dias, km, preco_total))
+print('O valor total a pagar pelo aluguel do carro por {} dia(s) e por {} Km(s) rodados é de {} reais.'.format(dias, km, preco_total))
