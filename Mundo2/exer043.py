@@ -12,17 +12,21 @@ from math import pow
 massa = float(input('Digite seu peso (Kg): '))
 altura = float(input('Digite sua altura (m): '))
 imc = massa / pow(altura, 2)
-
-if imc < 18.5: # 'imc < 18.5' pode ser feito desse jeito tbm
+print('Seu IMC è {:.1f}.'.format(imc))
+if imc < 18.5:
     print('-------------------------------------------------------------------')
     print('Voce está abaixo do peso ideal! Procure um médico ou nutricionista.')
-elif imc <= 25:
+
+# "elif 18.5 <= imc <= 25:" fica melhor do que "elif imc <= 25:"
+# pois torna o código mais fácil de compreender
+elif 18.5 <= imc <= 25:
+
     print('-------------------------------------------------------------------')
     print('Parabéns! Você está no seu peso ideal!')
-elif imc <= 30:
+elif 25 <= imc <= 30:
     print('-------------------------------------------------------------------')
     print('Voce está com sobrepeso! Procure um médico ou nutricionista.')
-elif imc <= 40:
+elif 30 <= imc <= 40:
     print('-------------------------------------------------------------------')
     print('Voce está com obesidade! Procure imediatamente um médico ou nutricionista.')
 else:
