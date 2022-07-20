@@ -4,7 +4,6 @@
 n = int(input("Digite um número para cálculo do fatorial: "))
 fat = 1
 
-
 if n == 0:
     1
 else:

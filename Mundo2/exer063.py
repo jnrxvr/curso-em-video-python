@@ -1,20 +1,22 @@
-# Exercício Python 64:
-# Crie um programa que leia vários números inteiros pelo teclado.
-# O programa só vai parar quando o usuário digitar o valor 999, que é a condição de parada.
-# No final, mostre quantos números foram digitados
-# e qual foi a soma entre eles (desconsiderando o flag).
+# Exercício Python 63:
+# Escreva um programa que leia um número N inteiro qualquer
+# e mostre na tela os N primeiros elementos
+# de uma Sequência de Fibonacci. Exemplo:
+# 0 – 1 – 1 – 2 – 3 – 5 – 8
 
-num = int(input('Digite um número inteiro: '))
-total = 0
-soma = num
+print('*** SEQUÊNCIA DE FIBONACCI ***')
+termos = int(input('Digite o números de termos da sequência de Fibonacci: '))
+cont = 3        # já mostrei os dois primeiros termos, portanto começa do terceiro
+t1 = 0
+t2 = 1
+prox = 0
 
-while num != 999:
-    print('999 - para encerrar o programa.')
-    total += 1
-    soma = soma + num
-    num = int(input('Digite um número inteiro: '))
+print('{} {}' .format(t1, t2), end='')
 
-# Coloca-se o comando no final para que o 999 não seja somado. Isso fará com que o bloco não seja executado quando 999
-# executado, partindo direto para a linha final
-
-print('O total de números digitados foram {} e o somatório total foi de {}.'.format(total, soma))
+while cont <= termos:
+    t3 = t1 + t2
+    print(' {}'. format(t3), end='')
+    t1 = t2
+    t2 = t3
+    cont += 1
+print('\n----- FIM -----')

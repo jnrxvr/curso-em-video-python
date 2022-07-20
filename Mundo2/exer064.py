@@ -1,39 +1,20 @@
-# Exercício Python 65:
+# Exercício Python 64:
 # Crie um programa que leia vários números inteiros pelo teclado.
-# No final da execução, mostre a média entre todos os valores e
-# qual foi o maior e o menor valores lidos.
-# O programa deve perguntar ao usuário
-# se ele quer ou não continuar a digitar valores.
+# O programa só vai parar quando o usuário digitar o valor 999, que é a condição de parada.
+# No final, mostre quantos números foram digitados
+# e qual foi a soma entre eles (desconsiderando o flag).
 
-cont = 1
-media = 0
-soma = 0
-maior = 0
-menor = 0
-resp = ''
+num = int(input('Digite um número inteiro: '))
+total = 0
+soma = num
 
-while resp in 'Ss':
-# usar 'in' para que o prog finalize caso o usuário digite "N/n/não/Não" ou seja digitado algum número por acidente
+while num != 999:
+    print('999 - para encerrar o programa.')
+    total += 1
+    soma = soma + num
+    num = int(input('Digite um número inteiro: '))
 
-    if cont == 1:  # para a primeira iteração o maior e menor peso serão iguais
-        num = int(input('Digite um valor inteiro: '))
-        soma = num
-        media = num
-        maior = num
-        menor = num
-        cont += 1
-        resp = str(input('Deseja continuar [S/N]? ')).strip().lower()[0]
-    else:
-        num = int(input('Digite um valor inteiro: '))
-        soma = soma + num
-        media = soma / cont
-        cont += 1
-        resp = str(input('Deseja continuar [S/N]? ')).strip().lower()[0]
-        if num > maior:
-            maior = num
-        if num < menor:
-            menor = num
-print('***************************')
-print('Média: {}'
-      '\nMaior valor: {}'
-      '\nMenor valor: {}' .format(media, maior, menor))
+# Coloca-se o comando no final para que o 999 não seja somado. Isso fará com que o bloco não seja executado quando 999
+# executado, partindo direto para a linha final
+
+print('O total de números digitados foram {} e o somatório total foi de {}.'.format(total, soma))

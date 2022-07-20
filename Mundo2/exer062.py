@@ -1,22 +1,21 @@
-# Exercício Python 63:
-# Escreva um programa que leia um número N inteiro qualquer
-# e mostre na tela os N primeiros elementos
-# de uma Sequência de Fibonacci. Exemplo:
-# 0 – 1 – 1 – 2 – 3 – 5 – 8
+# Exercício Python 62: Melhore o DESAFIO 61,
+# perguntando para o usuário se ele quer mostrar mais alguns termos.
+# O programa encerrará quando ele disser que quer mostrar 0 termos.
 
-print('*** SEQUÊNCIA DE FIBONACCI ***')
-termos = int(input('Digite o números de termos da sequência de Fibonacci: '))
-cont = 3        # já mostrei os dois primeiros termos, portanto começa do terceiro
-t1 = 0
-t2 = 1
-prox = 0
+print('GERADOR DE PA')
+primeiro = int(input('Digite o primeiro termo da P.A: '))
+razao = int(input('Digite o valor da razão da P.A: '))
+termo = primeiro
+cont = 1
+total = 0
+mais = 10   # esse exercício começa com o prog mostrando 10 termos
 
-print('{} {}' .format(t1, t2), end='')
+while mais != 0:
+    total = total + mais
+    while cont <= total:
+        print(termo, end=' ')
+        termo += razao
+        cont += 1
+    mais = int(input('\nQuantos termos você quer a mais? '))
 
-while cont <= termos:
-    t3 = t1 + t2
-    print(' {}'. format(t3), end='')
-    t1 = t2
-    t2 = t3
-    cont += 1
-print('\n----- FIM -----')
+print('Progressão finalizada com {} termos mostrados.'.format(total))
